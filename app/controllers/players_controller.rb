@@ -5,18 +5,12 @@ class PlayersController < ApplicationController
     respond_to do |format|
       if session[:players].nil?
         session[:players] = [params[:player_id]]
-        print "DEBUG ADD PLAYER"
-        print session[:players]
         format.html {redirect_to root_url, notice: 'Player was successfully add'}
       else
         if session[:players].include? params[:player_id]
-          print "DEBUG ADD PLAYER"
-          print session[:players]
           format.html {redirect_to root_url, notice: 'Player was already add'}
         else
           session[:players].append params[:player_id]
-          print "DEBUG ADD PLAYER"
-          print session[:players]
           format.html {redirect_to root_url, notice: 'Player was successfully add'}
         end
       end
