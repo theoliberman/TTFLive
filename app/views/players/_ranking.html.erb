@@ -1,0 +1,10 @@
+<% @players.each {|player| %>
+  <tr>
+    <td><%= player.rank %></td>
+    <td><%= player.name %></td>
+    <td>
+      <%= player.team.code %>
+    </td>
+    <td><%= player.score %></td>
+  </tr>
+<% } %>
