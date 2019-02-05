@@ -1,0 +1,13 @@
+<% unless @dashboard_players.nil? %>
+  <% @dashboard_players.each {|player| %>
+    <tr>
+      <td><%= button_to '-', delete_path(player.player_id), method: :post %></td>
+      <td><%= player.rank %></td>
+      <td><%= player.name %></td>
+      <td>
+        <%= player.team.code %>
+      </td>
+      <td><%= player.score %></td>
+    </tr>
+  <% } %>
+<% end %>

@@ -6,5 +6,6 @@
       <%= player.team.code %>
     </td>
     <td><%= player.score %></td>
+    <td><%= button_to '+', add_path(player.player_id), method: :post %></td>
   </tr>
 <% } %>
