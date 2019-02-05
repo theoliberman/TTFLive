@@ -1,2 +1,28 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ttflive</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+
+<header>
+  <%= render 'layouts/nav' %>
+</header>
+
+<main class='container-fluid py-5 bg-light'>
+  <%= yield %>
+</main>
+
+<footer class='navbar navbar-expand-md navbar-light fixed-bottom bg-white'>
+  <%= render 'layouts/footer' %>
+</footer>
+
+</body>
+
+</html>

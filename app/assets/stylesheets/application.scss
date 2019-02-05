@@ -1,0 +1,57 @@
+$primary: #BD3128;
+
+@import 'bootstrap';
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+.logo {
+  max-width: 30px;
+  max-height: 60px;
+}
+
+td, th {
+  text-align: center;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header, footer {
+  flex: none;
+}
+
+main {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  flex: auto;
+  margin-bottom: 50px;
+}
+
+.social:hover {
+  text-decoration: none;
+}
+
+.fa-facebook-square {
+  color: blue;
+}
+
+.fa-twitter-square {
+  color: cyan;
+}
+
+.fa-envelope-square {
+  color: black;
+}
+
+.heart:hover {
+  font-weight: 900;
+}
+
