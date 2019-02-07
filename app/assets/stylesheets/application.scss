@@ -8,41 +8,8 @@ td, th {
   text-align: center;
 }
 
-html, body {
-  margin: 0;
-  height: 100%;
-  min-height: 100%;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-}
-
-header, footer {
-  flex: none;
-}
-
 main {
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-  flex: auto;
-  margin-bottom: 50px;
-}
-
-#notice {
   margin-top: 10px;
-  text-align: center;
-}
-
-.affix-top {
-  /* Initial items */
-}
-
-.affix {
-  top:50px;
-  right:0;
-  position:fixed;
 }
 
 .heart:hover {

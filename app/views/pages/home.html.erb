@@ -1,56 +1,50 @@
-<div class="container-fluid">
+<div class="col-md-6">
 
-  <div class='row'>
-
-    <div class='col-md-6'>
-      <form class='form-inline'>
-        <div class='input-group w-100'>
-          <input type='text' class='form-control' id='search' placeholder='Search' autocomplete='off'>
-          <div class='input-group-append'>
-            <button class='btn btn-primary' type='button'>
-              <i class='fa fa-search'></i>
-            </button>
-          </div>
-        </div>
-      </form>
-      <div class='table-responsive'>
-        <table class='table table-striped table-borderless table-sm table-hover'>
-          <thead>
-          <tr>
-            <th scope='col'>Rank</th>
-            <th scope='col'>Player</th>
-            <th scope='col'>Team</th>
-            <th scope='col'>Score</th>
-            <th scope='col'>Add</th>
-          </tr>
-          </thead>
-          <tbody id='ranking'>
-          <%= render 'players/ranking' %>
-          </tbody>
-        </table>
+  <form class='form-inline'>
+    <div class='input-group w-100'>
+      <input type='text' class='form-control' id='search' placeholder='Search' autocomplete='off'>
+      <div class='input-group-append'>
+        <button class='btn btn-primary' type='button'>
+          <i class='fa fa-search'></i>
+        </button>
       </div>
     </div>
+  </form>
 
-    <div class='col-md-6'>
-      <%= button_to 'Reset', reset_path, method: :post, class: 'btn btn-primary btn-block' %>
-      <div class='table-responsive'>
-        <table class='table table-striped table-borderless table-sm table-hover'>
-          <thead>
-          <tr>
-            <th scope='col'>Delete</th>
-            <th scope='col'>Rank</th>
-            <th scope='col'>Player</th>
-            <th scope='col'>Team</th>
-            <th scope='col'>Score</th>
-          </tr>
-          </thead>
-          <tbody id='dashboard'>
-          <%= render 'players/dashboard' %>
-          </tbody>
-        </table>
-      </div>
-    </div>
+  <table class='table table-striped table-borderless table-sm table-hover'>
+    <thead>
+    <tr>
+      <th scope='col'>Rank</th>
+      <th scope='col'>Player</th>
+      <th scope='col'>Team</th>
+      <th scope='col'>Score</th>
+      <th scope='col'>Add</th>
+    </tr>
+    </thead>
+    <tbody id='ranking'>
+    <%= render 'players/ranking' %>
+    </tbody>
+  </table>
 
-  </div>
+</div>
+
+<div class="col-md-6">
+
+  <%= button_to 'Reset', reset_path, method: :post, class: 'btn btn-primary btn-block' %>
+
+  <table class='table table-striped table-borderless table-sm table-hover'>
+    <thead>
+    <tr>
+      <th scope='col'>Delete</th>
+      <th scope='col'>Rank</th>
+      <th scope='col'>Player</th>
+      <th scope='col'>Team</th>
+      <th scope='col'>Score</th>
+    </tr>
+    </thead>
+    <tbody id='dashboard'>
+    <%= render 'players/dashboard' %>
+    </tbody>
+  </table>
 
 </div>

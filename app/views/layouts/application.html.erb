@@ -11,20 +11,17 @@
 
 <body>
 
+<div class="container-fluid">
+
 <header>
   <%= render 'layouts/nav' %>
 </header>
 
-<main class='container-fluid py-5 bg-light'>
-  <div id="notice">
-    <%= flash[:notice] %>
-  </div>
+<main class="row">
   <%= yield %>
 </main>
 
-<footer class='navbar navbar-expand-md navbar-light fixed-bottom bg-white'>
-  <%= render 'layouts/footer' %>
-</footer>
+</div>
 
 </body>
 
