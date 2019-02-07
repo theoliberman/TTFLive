@@ -9,6 +9,9 @@
         <i class='fa d-inline fa-lg fa-basketball-ball'></i>
         <b> TTFLive</b>
       <% end %>
+      <% text = status ? 'Disable AutoUpdate' : 'Enable AutoUpdate' %>
+      <% btn_class = status ? 'btn-success' : 'btn-danger' %>
+      <%= button_to text, auto_update_path, method: :post, class: 'btn btn-block ' + btn_class %>
     </div>
   </div>
 </nav>
