@@ -20,6 +20,7 @@ module Ttflive
     # the framework and any gems in your application.
 
 
+=begin
     config.after_initialize do
       if Appstate.first.nil?
         Appstate.create(auto_update: false)
@@ -27,6 +28,7 @@ module Ttflive
         Appstate.first.update(auto_update: false)
       end
     end
+=end
 
   end
 end
