@@ -38,6 +38,11 @@ class PlayersController < ApplicationController
     else
       @players = all_players
     end
+    if session[:players].nil?
+      @dashboard_players = nil
+    else
+      @dashboard_players = @players.select {|p| session[:players].include? p.player_id}
+    end
     respond_to do |format|
       format.js
     end

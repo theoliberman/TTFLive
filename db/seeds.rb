@@ -1,5 +1,11 @@
 require 'net/http'
 
+if Appstate.first.nil?
+  Appstate.create(auto_update: false)
+else
+  Appstate.first.update(auto_update: false)
+end
+
 teams_url = 'http://data.nba.net/prod/v1/2018/teams.json'
 teams_json = JSON.parse(Net::HTTP.get(URI(teams_url)))['league']['standard']
 teams_json.each {|team|

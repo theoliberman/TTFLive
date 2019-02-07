@@ -1,5 +1,34 @@
 class ApplicationController < ActionController::Base
 
+  def update
+    thread = Thread.start {
+      loop do
+        update_score
+        sleep 10
+        unless Appstate.first.auto_update
+          unless thread.nil?
+            Thread.kill(thread)
+          end
+        end
+      end
+    }
+    thread.name
+  end
+
+  def auto_update
+    respond_to do |format|
+      app_state = Appstate.first
+      if app_state.auto_update
+        app_state.update(auto_update: false)
+        format.html {redirect_to root_path, notice: 'AutoUpdate was disabled'}
+      else
+        app_state.update(auto_update: true)
+        update
+        format.html {redirect_to root_path, notice: 'AutoUpdate was enabled'}
+      end
+    end
+  end
+
   def update_score
     reset_all_score
     Game.today.each {|game|
@@ -20,8 +49,7 @@ class ApplicationController < ActionController::Base
         }
       end
     }
-    redirect_to root_path
-    #ActionCable.server.broadcast('score', nil)
+    ActionCable.server.broadcast('score', nil)
   end
 
   def reset_all_score

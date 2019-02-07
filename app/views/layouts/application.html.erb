@@ -16,6 +16,9 @@
 </header>
 
 <main class='container-fluid py-5 bg-light'>
+  <div id="notice">
+    <%= flash[:notice] %>
+  </div>
   <%= yield %>
 </main>
 

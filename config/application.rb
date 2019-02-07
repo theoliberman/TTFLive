@@ -18,5 +18,15 @@ module Ttflive
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+
+    config.after_initialize do
+      if Appstate.first.nil?
+        Appstate.create(auto_update: false)
+      else
+        Appstate.first.update(auto_update: false)
+      end
+    end
+
   end
 end
