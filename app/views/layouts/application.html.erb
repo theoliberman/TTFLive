@@ -13,13 +13,17 @@
 
 <div class="container-fluid">
 
-<header>
-  <%= render 'layouts/nav' %>
-</header>
+  <header>
+    <%= render 'layouts/nav' %>
+  </header>
 
-<main class="row">
-  <%= yield %>
-</main>
+  <main class="row bg-light">
+    <%= yield %>
+  </main>
+
+  <footer class='navbar navbar-expand-md navbar-light fixed-bottom bg-white'>
+    <%= render 'layouts/footer' %>
+  </footer>
 
 </div>
 

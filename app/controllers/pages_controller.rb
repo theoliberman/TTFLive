@@ -6,5 +6,6 @@ class PagesController < ApplicationController
     else
       @dashboard_players = @players.select {|p| session[:players].include? p.player_id}
     end
+    @games = Game.today
   end
 end

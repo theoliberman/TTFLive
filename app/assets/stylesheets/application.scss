@@ -9,10 +9,33 @@ td, th {
 }
 
 main {
-  margin-top: 10px;
+  padding-top: 25px;
+  margin-bottom: 50px;
 }
 
 .heart:hover {
   font-weight: 900;
 }
+
+.social:hover {
+  text-decoration: none;
+}
+
+.fa-facebook-square, .fa-twitter-square, .fa-envelope-square {
+  color: #6c757d;
+}
+
+.fa-facebook-square:hover {
+  color: blue;
+}
+
+.fa-twitter-square:hover {
+  color: cyan;
+}
+
+.fa-envelope-square:hover {
+  color: black;
+}
+
+
 

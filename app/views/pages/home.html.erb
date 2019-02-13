@@ -1,4 +1,7 @@
-<div class="col-md-6">
+<div class="col-md-1">
+</div>
+
+<div class="col-md-4">
 
   <form class='form-inline'>
     <div class='input-group w-100'>
@@ -28,7 +31,20 @@
 
 </div>
 
-<div class="col-md-6">
+<div class="col-md-2">
+  <%= button_to 'Games', root_path, method: :get, class: 'btn btn-primary btn-block' %>
+  <table class="table table-striped table-borderless table-sm table-hover">
+    <thead>
+    <th scope="col">Home</th>
+    <th scope="col">Away</th>
+    </thead>
+    <tbody id="games">
+    <%= render 'games/today' %>
+    </tbody>
+  </table>
+</div>
+
+<div class="col-md-4">
 
   <%= button_to 'Reset', reset_path, method: :post, class: 'btn btn-primary btn-block' %>
 
@@ -38,7 +54,6 @@
       <th scope='col'>Delete</th>
       <th scope='col'>Rank</th>
       <th scope='col'>Player</th>
-      <th scope='col'>Team</th>
       <th scope='col'>Score</th>
     </tr>
     </thead>
@@ -47,4 +62,7 @@
     </tbody>
   </table>
 
+</div>
+
+<div class="col-md-1">
 </div>

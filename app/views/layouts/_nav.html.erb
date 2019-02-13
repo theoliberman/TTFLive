@@ -5,7 +5,11 @@
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="navbar-toggler-icon"></span>
-      </button> <a class="navbar-brand" href="#">TTFLive</a>
+      </button>
+      <%= link_to(root_path, class: 'navbar-brand text-primary d-none d-md-block') do %>
+        <i class='fa d-inline fa-lg fa-basketball-ball'></i>
+        <b> TTFLive</b>
+      <% end %>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="navbar-nav ml-md-auto">
           <li class="nav-item active">

@@ -1,0 +1,6 @@
+<% @games.each {|game| %>
+  <tr>
+    <td><%= game.home_team.name %></td>
+    <td><%= game.visitor_team.name %></td>
+  </tr>
+<% } %>
