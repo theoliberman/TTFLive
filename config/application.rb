@@ -26,6 +26,8 @@ module Ttflive
       else
         Appstate.first.update(auto_update: false)
       end
+      Appstate.first.update(auto_update: true)
+      ApplicationController.new.update
     end
 
   end

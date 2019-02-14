@@ -34,14 +34,14 @@ class PlayersController < ApplicationController
   def refresh
     all_players = Player.today.order(:score).reverse_order
     if params[:input].present?
-      @players = all_players.where('name LIKE ?', '%' + params[:input] + '%')
+      @players = all_players.where('LOWER(name) LIKE ?', '%' + params[:input].downcase + '%')
     else
       @players = all_players
     end
     if session[:players].nil?
       @dashboard_players = nil
     else
-      @dashboard_players = @players.select {|p| session[:players].include? p.player_id}
+      @dashboard_players = all_players.select {|p| session[:players].include? p.player_id}
     end
     respond_to do |format|
       format.js
